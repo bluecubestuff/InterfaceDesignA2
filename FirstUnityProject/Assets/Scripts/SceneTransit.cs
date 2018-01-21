@@ -9,17 +9,15 @@ public class SceneTransit : MonoBehaviour {
     Canvas mainMenu;
 
     [SerializeField]
-    Canvas optionsCanvas;
-
-    [SerializeField]
-    Canvas highscoreCanvas;
+     Canvas optionsCanvas;
 
     Canvas currentCanvas;
+
+
 
     protected void Start()
     {
         optionsCanvas.enabled = false;
-        highscoreCanvas.enabled = false;
     }
     public void Game()
     {
@@ -37,9 +35,9 @@ public class SceneTransit : MonoBehaviour {
     public void HighScore()
     {
         mainMenu.enabled = false;
-        highscoreCanvas.enabled = true;
+        //highscoreCanvas.enabled = true;
 
-        currentCanvas = highscoreCanvas;
+        //currentCanvas = highscoreCanvas;
     }
 
     public void Back() // options back btn, highscore back btn
@@ -48,6 +46,7 @@ public class SceneTransit : MonoBehaviour {
 
         //if option, options canvas disable, 
         //if highscore, highscore canvas disable
+
         currentCanvas.enabled = false;
     }
 
