@@ -12,6 +12,17 @@ public class SceneTransit : MonoBehaviour
     [SerializeField]
     Canvas optionsCanvas;
 
+    [SerializeField]
+    Canvas shopScreen;
+    [SerializeField]
+    Canvas friendScreen;
+    [SerializeField]
+    Canvas skillScreen;
+    [SerializeField]
+    Canvas gearScreen;
+    [SerializeField]
+    Canvas heroScreen;
+
     Canvas currentCanvas;
 
     protected void Start()
@@ -30,7 +41,7 @@ public class SceneTransit : MonoBehaviour
 
     public void Game()
     {
-        SceneManager.LoadScene("InGame"); //load title of scene
+        SceneManager.LoadScene("Prototype"); //load title of scene
     }
 
     public void SplashScreen()
