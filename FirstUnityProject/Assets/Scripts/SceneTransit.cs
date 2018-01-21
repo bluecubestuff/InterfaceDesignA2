@@ -3,25 +3,47 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneTransit : MonoBehaviour {
-
+public class SceneTransit : MonoBehaviour
+{
+    [SerializeField]
+    Canvas splashScreen;
     [SerializeField]
     Canvas mainMenu;
-
     [SerializeField]
-     Canvas optionsCanvas;
+    Canvas optionsCanvas;
 
     Canvas currentCanvas;
-
-
 
     protected void Start()
     {
         optionsCanvas.enabled = false;
+        mainMenu.enabled = false;
     }
+
+    public void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && splashScreen.enabled)
+        {
+            MainMenu();
+        }
+    }
+
     public void Game()
     {
         SceneManager.LoadScene("InGame"); //load title of scene
+    }
+
+    public void SplashScreen()
+    {
+
+    }
+
+    public void MainMenu()
+    {
+        splashScreen.enabled = false;
+        mainMenu.enabled = true;
+
+        currentCanvas = mainMenu;
     }
 
     public void Options()
