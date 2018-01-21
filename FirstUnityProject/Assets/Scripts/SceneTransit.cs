@@ -29,6 +29,8 @@ public class SceneTransit : MonoBehaviour
     {
         optionsCanvas.enabled = false;
         mainMenu.enabled = false;
+        friendScreen.enabled = false;
+
     }
 
     public void Update()
@@ -44,17 +46,20 @@ public class SceneTransit : MonoBehaviour
         SceneManager.LoadScene("Prototype"); //load title of scene
     }
 
-    public void SplashScreen()
-    {
-
-    }
-
     public void MainMenu()
     {
         splashScreen.enabled = false;
         mainMenu.enabled = true;
 
         currentCanvas = mainMenu;
+    }
+
+    public void FriendMenu()
+    {
+        mainMenu.enabled = false;
+        friendScreen.enabled = true;
+
+        currentCanvas = friendScreen;
     }
 
     public void Options()
@@ -65,21 +70,11 @@ public class SceneTransit : MonoBehaviour
         currentCanvas = optionsCanvas;
     }
 
-    public void HighScore()
-    {
-        mainMenu.enabled = false;
-        //highscoreCanvas.enabled = true;
-
-        //currentCanvas = highscoreCanvas;
-    }
-
     public void Back() // options back btn, highscore back btn
     {
         mainMenu.enabled = true;
-
         //if option, options canvas disable, 
         //if highscore, highscore canvas disable
-
         currentCanvas.enabled = false;
     }
 
