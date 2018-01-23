@@ -29,20 +29,24 @@ public class ButtonMovement : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        move = false;
+        //check if collision on the right
+        if (gameObject.transform.position.x < collision.gameObject.transform.position.x)
+            move = false;
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        move = true;
+        //check if collision on the left
+        if (gameObject.transform.position.x < collision.gameObject.transform.position.x)
+            move = true;
     }
 
     public void Clicked()
     {
         Debug.Log("Clicked!");
-        gameController.GetComponent<GameController>().PopTiles(gameObject);
+        GameController.PopTiles(this.gameObject);
     }
 
     public int GetID() { return ID; }

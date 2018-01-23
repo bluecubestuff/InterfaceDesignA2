@@ -25,15 +25,17 @@ public class SceneTransit : MonoBehaviour
     Canvas currentCanvas;
     Canvas prevCanvas;
 
+    public List<GameObject> listOfButtons;
+
     protected void Start()
     {
         mainMenu.enabled = false;
         optionsCanvas.enabled = false;
         friendScreen.enabled = false;
         skillScreen.enabled = false;
-        //shopScreen.enabled = false;
-        //gearScreen.enabled = false;
-        //heroScreen.enabled = false;
+        shopScreen.enabled = false;
+        gearScreen.enabled = false;
+        heroScreen.enabled = false;
     }
 
     public void Update()
@@ -66,6 +68,13 @@ public class SceneTransit : MonoBehaviour
         currentCanvas = _canvas;
     }
 
-    
+    public void hideButton(GameObject _btn)
+    {
+        _btn.SetActive(false);
+    }
 
+    public void showButton(GameObject _btn)
+    {
+        _btn.SetActive(true);
+    }
 }

@@ -78,7 +78,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -132,8 +132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1acfefd4b89ff2b4996b32533b57f6da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundaryX: 785
-  speed: 200
+  boundaryX: 570
+  speed: 300
   gameController: {fileID: 1146028109425298, guid: eca2fb827f358904aa6b8522d14573c3,
     type: 2}
 --- !u!114 &114567079683031196
