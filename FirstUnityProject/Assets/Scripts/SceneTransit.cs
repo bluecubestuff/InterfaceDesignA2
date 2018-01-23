@@ -11,7 +11,6 @@ public class SceneTransit : MonoBehaviour
     Canvas mainMenu;
     [SerializeField]
     Canvas optionsCanvas;
-
     [SerializeField]
     Canvas shopScreen;
     [SerializeField]
@@ -24,13 +23,17 @@ public class SceneTransit : MonoBehaviour
     Canvas heroScreen;
 
     Canvas currentCanvas;
+    Canvas prevCanvas;
 
     protected void Start()
     {
-        optionsCanvas.enabled = false;
         mainMenu.enabled = false;
+        optionsCanvas.enabled = false;
         friendScreen.enabled = false;
-
+        skillScreen.enabled = false;
+        //shopScreen.enabled = false;
+        //gearScreen.enabled = false;
+        //heroScreen.enabled = false;
     }
 
     public void Update()
@@ -54,28 +57,12 @@ public class SceneTransit : MonoBehaviour
         currentCanvas = mainMenu;
     }
 
-    public void FriendMenu()
+    public void changeMenu(Canvas _canvas)
     {
-        mainMenu.enabled = false;
-        friendScreen.enabled = true;
+        prevCanvas = currentCanvas;
+        prevCanvas.enabled = false;
 
-        currentCanvas = friendScreen;
+        _canvas.enabled = true;
+        currentCanvas = _canvas;
     }
-
-    public void Options()
-    {
-        mainMenu.enabled = false;
-        optionsCanvas.enabled = true;
-
-        currentCanvas = optionsCanvas;
-    }
-
-    public void Back() // options back btn, highscore back btn
-    {
-        mainMenu.enabled = true;
-        //if option, options canvas disable, 
-        //if highscore, highscore canvas disable
-        currentCanvas.enabled = false;
-    }
-
 }
