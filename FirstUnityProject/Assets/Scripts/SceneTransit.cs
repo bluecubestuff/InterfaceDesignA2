@@ -40,7 +40,7 @@ public class SceneTransit : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetMouseButtonDown(0) && splashScreen.enabled)
+        if ((Input.GetMouseButtonDown(0) || Input.touchCount > 0) && splashScreen.enabled)
         {
             MainMenu();
         }

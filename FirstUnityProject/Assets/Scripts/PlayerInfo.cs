@@ -36,14 +36,14 @@ public class PlayerInfo : MonoBehaviour {
 
     public void addMoney(int _money)
     {
-        if (numberItem < 10 && numberItem >= 0)
+        if (numberItem <= 10 && numberItem >= 0)
             money += _money;
         moneyText.text = "Gold:[ " + money + " ]";
     }
 
     public void addItem(int _numberItem)
     {
-        if (numberItem < 10 && numberItem >= 0)
+        if (numberItem <= 10 && numberItem >= 0)
             numberItem += _numberItem;
     }
 

@@ -14,5 +14,6 @@ public class ResumeScript : MonoBehaviour {
         PauseScript.paused = false;
         Time.timeScale = 1f;
         gameObject.SetActive(false);
+        QuitScript.me.SetActive(false);
     }
 }
